@@ -1,0 +1,126 @@
+/* Thème inspiré GRDF — mobile-first, responsive, accessible */
+:root{
+  --grdf-blue:#0072bc;
+  --grdf-green:#00a651;
+  --bg:#f5f9fc;
+  --text:#1b1b1b;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
+  --focus: 0 0 0 3px rgba(0,114,188,.35);
+  --space: clamp(16px, 3vw, 24px);
+  --maxw: 560px; /* largeur max de la carte sur desktop */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+}
+
+/* En-tête */
+.site-header{
+  padding: max(env(safe-area-inset-top), 12px) var(--space);
+  text-align:center;
+  color:#fff;
+  background: linear-gradient(100deg, var(--grdf-blue), var(--grdf-green));
+}
+.logo{
+  width:min(180px, 60vw);
+  height:auto;
+  display:block;
+  margin: 4px auto 8px;
+}
+.site-title{
+  margin:0 0 6px 0;
+  font-weight:700;
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+}
+
+/* Contenu */
+.container{
+  min-height: calc(100dvh - 180px); /* occupe la hauteur restante de l'écran */
+  display:grid;
+  place-items:center;
+  padding: var(--space);
+}
+.card{
+  width:100%;
+  max-width: var(--maxw);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 4vw, 28px);
+}
+.card h2{
+  margin:0 0 10px 0;
+  color: var(--grdf-blue);
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+/* Formulaire */
+.form-group{margin-top: 10px}
+.label{
+  display:block;
+  font-size: .95rem;
+  margin-bottom: 6px;
+}
+select, .btn{
+  width:100%;
+  font-size: clamp(1rem, 3.5vw, 1.05rem);
+  padding: 14px 12px;
+  border-radius: 10px;
+  border:1px solid #d1d5db;
+  min-height: 44px; /* cible tactile */
+}
+select:focus{
+  outline:none;
+  box-shadow: var(--focus);
+  border-color: var(--grdf-blue);
+}
+.helper{
+  margin:8px 2px 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.btn{
+  margin-top:12px;
+  background: var(--grdf-blue);
+  color:#fff;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  transition: transform .06s ease, background .2s ease;
+}
+.btn:hover{ background: var(--grdf-green); }
+.btn:active{ transform: scale(.98); }
+.btn:focus{ outline:none; box-shadow: var(--focus); }
+.btn:disabled{
+  background: #b9d6ea;
+  cursor:not-allowed;
+}
+
+/* Pied de page */
+.site-footer{
+  text-align:center;
+  color:#4b5563;
+  font-size:.9rem;
+  padding: 10px var(--space) max(env(safe-area-inset-bottom), 14px);
+}
+
+/* Préférence utilisateur : réduit les animations */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+}
+
+/* Écrans plus larges : ajuste légèrement la carte */
+@media (min-width: 768px){
+  .site-header{ padding: 18px var(--space); }
+  .card{ padding: 28px; }
+}

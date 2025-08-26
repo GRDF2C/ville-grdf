@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sélection de Ville • GRDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <!-- Emplacement du logo : remplace "logo-grdf.png" par ton fichier -->
+    <img src="logo-grdf.png" alt="Logo GRDF" class="logo" />
+    <h1 class="site-title">Bienvenue sur l’espace GRDF</h1>
+  </header>
+
+  <main class="container">
+    <section class="card" role="region" aria-labelledby="titre-card">
+      <h2 id="titre-card">Sélectionnez votre ville</h2>
+
+      <div class="form-group">
+        <label for="citySelect" class="label">Ville</label>
+        <select id="citySelect" aria-describedby="helper" required>
+          <option value="">-- Choisissez une ville --</option>
+          <option value="https://www.paris.fr/">Paris</option>
+          <option value="https://www.marseille.fr/">Marseille</option>
+          <option value="https://www.lille.fr/">Lille</option>
+        </select>
+        <p id="helper" class="helper">Vous serez redirigé vers le site correspondant.</p>
+      </div>
+
+      <button id="goBtn" class="btn" type="button" disabled>Aller</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 GRDF — Tous droits réservés</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
