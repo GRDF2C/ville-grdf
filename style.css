@@ -1,4 +1,3 @@
-/* Thème inspiré GRDF — mobile-first, responsive, accessible */
 :root{
   --grdf-blue:#0072bc;
   --grdf-green:#00a651;
@@ -10,7 +9,7 @@
   --shadow:0 8px 24px rgba(0,0,0,.08);
   --focus: 0 0 0 3px rgba(0,114,188,.35);
   --space: clamp(16px, 3vw, 24px);
-  --maxw: 560px; /* largeur max de la carte sur desktop */
+  --maxw: 560px;
 }
 
 *{box-sizing:border-box}
@@ -44,7 +43,7 @@ body{
 
 /* Contenu */
 .container{
-  min-height: calc(100dvh - 180px); /* occupe la hauteur restante de l'écran */
+  min-height: calc(100dvh - 180px);
   display:grid;
   place-items:center;
   padding: var(--space);
@@ -106,7 +105,6 @@ select:focus{
   cursor:not-allowed;
 }
 
-/* Pied de page */
 .site-footer{
   text-align:center;
   color:#4b5563;
@@ -114,12 +112,10 @@ select:focus{
   padding: 10px var(--space) max(env(safe-area-inset-bottom), 14px);
 }
 
-/* Préférence utilisateur : réduit les animations */
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
 }
 
-/* Écrans plus larges : ajuste légèrement la carte */
 @media (min-width: 768px){
   .site-header{ padding: 18px var(--space); }
   .card{ padding: 28px; }
